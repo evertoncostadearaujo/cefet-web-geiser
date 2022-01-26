@@ -39,25 +39,25 @@ app.get('/', (req, res) => {
 // dica: o handler desta função pode chegar a ter ~15 linhas de código
 app.get('/jogador/:numero_identificador', (req, res) => {
     //TODO
-    var desteJogador = req.params.numero_identificador
-    var jogosDesteJogador = _.find(jogadores.players, function(el) {
-        return el.steamid === desteJogador;
-    });
-    var naoJogados = _.where(desteJogador, { playtime_forever: 0 });
-    var ordenadoDesc = _.sortBy(playtime_forever, function(el) {
-        return -el;
-    });
-    var primeiros5 = _.first(ordenadoDesc.reverse, 5);
-    var calculados = {
-        naoJogados,
-        ordenadoDesc,
-        primeiros5
-    }
-    res.render('jogador', {
-        profile: desteJogador,
-        gameInfo: jogosDesteJogador,
-        favorito: primeiros5[0]
-    })
+    // var desteJogador = req.params.numero_identificador
+    // var jogosDesteJogador = _.find(jogadores.players, function(el) {
+    //     return el.steamid === desteJogador;
+    // });
+    // var naoJogados = _.where(desteJogador, { playtime_forever: 0 });
+    // var ordenadoDesc = _.sortBy(playtime_forever, function(el) {
+    //     return -el;
+    // });
+    // var primeiros5 = _.first(ordenadoDesc.reverse, 5);
+    // var calculados = {
+    //     naoJogados,
+    //     ordenadoDesc,
+    //     primeiros5
+    // }
+    // res.render('jogador', {
+    //     profile: desteJogador,
+    //     gameInfo: jogosDesteJogador,
+    //     favorito: primeiros5[0]
+    // })
 })
 
 // EXERCÍCIO 1
